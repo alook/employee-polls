@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import PropTypes from "prop-types";
 
 const Login = ({dispatch, userIds}) => {
   const [userId, setUserId] = useState(userIds[0]);
@@ -45,5 +46,9 @@ const mapStateToProps = ({users}) => {
   return {
     userIds: Object.keys(users)
   };
+};
+
+Login.propTypes = {
+  userIds: PropTypes.array.isRequired
 };
 export default connect(mapStateToProps)(Login);

@@ -3,9 +3,11 @@ import {Link} from "react-router-dom";
 import Box from '@mui/material/Box';
 import Avatar from "@mui/material/Avatar";
 import * as React from "react";
+import PropTypes from "prop-types";
 
 const UserCard = (props) => {
-  if (props.authedUser === null) {
+  const {authedUser, avatarURL} = props
+  if (authedUser === null) {
     return null
   } else return (
       <Box sx={{
@@ -13,12 +15,12 @@ const UserCard = (props) => {
         alignItems: 'center'
       }}>
         <Box sx={{m: 1}}>
-          {props.avatarURL !== null ? (
-              <Avatar alt={props.authedUser} src={props.avatarURL}/>
+          {avatarURL !== null ? (
+              <Avatar alt={authedUser} src={avatarURL}/>
           ) : null}
         </Box>
         <Box sx={{m: 1}}>
-          {props.authedUser}
+          {authedUser}
         </Box>
         <Box sx={{m: 1}}>
           <Link to="/logout">Logout</Link>
@@ -33,5 +35,10 @@ const mapStateToProps = ({authedUser, users}) => {
     avatarURL: users[authedUser]?.avatarURL
   }
 }
+
+UserCard.propTypes = {
+  authedUser: PropTypes.string,
+  avatarURL: PropTypes.string
+};
 
 export default connect(mapStateToProps)(UserCard);

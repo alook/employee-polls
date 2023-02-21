@@ -3,6 +3,7 @@ import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {formatQuestion} from "../utils/helpers";
 import PollOptionBox from "./PollOptionBox";
 import Box from '@mui/material/Box';
+import PropTypes from "prop-types";
 
 const Poll = (props) => {
 
@@ -52,5 +53,11 @@ const mapStateToProps = ({authedUser, questions, users}, props) => {
         : null,
     authedUser
   };
+};
+
+Poll.propTypes = {
+  id: PropTypes.string.isRequired,
+  question: PropTypes.object,
+  authedUser: PropTypes.string.isRequired
 };
 export default withRouter(connect(mapStateToProps)(Poll));

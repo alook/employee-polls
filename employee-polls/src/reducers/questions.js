@@ -1,48 +1,31 @@
-import {RECEIVE_QUESTIONS, ADD_QUESTION, ANSWER_QUESTION} from "../actions/questions";
+import {createReducer} from '@reduxjs/toolkit'
+import {receiveQuestions, addQuestion, answerQuestion} from "../actions/questions";
 
 const OPTION_ONE = "optionOne"
 const OPTION_TWO = "optionTwo"
 
-export default function questions(state = {}, action) {
-  switch (action.type) {
-    case RECEIVE_QUESTIONS:
-      return {
-        ...state,
-        ...action.questions,
-      }
-    case ADD_QUESTION:
-      return {
-        ...state,
-        [action.question.id]: action.question
-      }
-    case ANSWER_QUESTION:
-      if (action.answer !== OPTION_ONE && action.answer !== OPTION_TWO) {
-        console.error("Invalid answer: " + action.answer)
-        return state
-      }
-      const newVotesOptionOne = state[action.qid][OPTION_ONE].votes.filter(username => username !== action.authedUser)
-      if (action.answer === OPTION_ONE) {
-        newVotesOptionOne.push(action.authedUser)
-      }
-      const newVotesOptionTwo = state[action.qid][OPTION_TWO].votes.filter(username => username !== action.authedUser)
-      if (action.answer === OPTION_TWO) {
-        newVotesOptionTwo.push(action.authedUser)
-      }
-      return {
-        ...state,
-        [action.qid]: {
-          ...state[action.qid],
-          [OPTION_ONE]: {
-            ...state[action.qid][OPTION_ONE],
-            votes: newVotesOptionOne
-          },
-          [OPTION_TWO]: {
-            ...state[action.qid][OPTION_TWO],
-            votes: newVotesOptionTwo
-          }
+export const questionsReducer = createReducer({}, (builder) => {
+  builder
+      .addCase(receiveQuestions, (state, action) => {
+        return action.payload
+      })
+      .addCase(addQuestion, (state, action) => {
+        state[action.payload.question.id] = action.payload.question
+      })
+      .addCase(answerQuestion, (state, action) => {
+        if (action.payload.answer !== OPTION_ONE && action.payload.answer !== OPTION_TWO) {
+          console.error("Invalid answer: " + action.payload.answer)
+          return state
         }
-      }
-    default:
-      return state;
-  }
-}
+        const newVotesOptionOne = state[action.payload.qid][OPTION_ONE].votes.filter(username => username !== action.payload.authedUser)
+        if (action.payload.answer === OPTION_ONE) {
+          newVotesOptionOne.push(action.payload.authedUser)
+        }
+        const newVotesOptionTwo = state[action.payload.qid][OPTION_TWO].votes.filter(username => username !== action.payload.authedUser)
+        if (action.payload.answer === OPTION_TWO) {
+          newVotesOptionTwo.push(action.payload.authedUser)
+        }
+        state[action.payload.qid].optionOne.votes = newVotesOptionOne
+        state[action.payload.qid].optionTwo.votes = newVotesOptionTwo
+      })
+})

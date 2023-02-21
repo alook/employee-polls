@@ -1,18 +1,23 @@
 import Login from "./Login"
 import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
 const ProtectedComponent = (props) => {
-  console.log("Protected component: " + props.component + " with user " + props.authedUser)
-  if (props.authedUser === null) {
+  if (!props.authedUser) {
     return <Login/>;
   }
   return props.component.children;
 };
 
-const mapStateToProps = ({authedUser}, component) => {
+const mapStateToProps = (state, component) => {
   return {
-    authedUser: authedUser,
+    authedUser: state.authedUser,
     component: component
   };
+};
+
+ProtectedComponent.propTypes = {
+  authedUser: PropTypes.string,
+  component: PropTypes.object.isRequired
 };
 export default connect(mapStateToProps)(ProtectedComponent);

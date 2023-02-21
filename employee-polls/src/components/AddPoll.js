@@ -39,13 +39,15 @@ const AddPoll = ({dispatch}) => {
             <FormControl>
               <Box width={500}>
                 <TextField fullWidth id="optionOne" label="First Option" variant="outlined" value={optionOne}
-                           onChange={handleOptionOneChange}/>
+                           onChange={handleOptionOneChange} inputProps={{ maxLength: 180 }} />
                 <p>or</p>
                 <TextField fullWidth id="optionTwo" label="Second Option" variant="outlined" value={optionTwo}
-                           onChange={handleOptionTwoChange}/>
+                           onChange={handleOptionTwoChange} inputProps={{ maxLength: 180 }}
+                           error={optionOne === optionTwo && optionOne.trim() !== ""}
+                           helperText="Please enter two different options."/>
                 <p/>
                 <Button m={2} variant="contained" type="submit"
-                        disabled={optionOne === "" || optionTwo === ""}>Submit</Button>
+                        disabled={optionOne.trim() === "" || optionTwo.trim() === "" || optionOne === optionTwo }>Submit</Button>
               </Box>
             </FormControl>
           </form>

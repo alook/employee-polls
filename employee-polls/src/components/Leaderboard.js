@@ -3,6 +3,7 @@ import * as React from 'react';
 import LeaderboardListItem from "./LeaderboardListItem";
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
+import PropTypes from "prop-types";
 
 const Leaderboard = (props) => {
 
@@ -41,6 +42,10 @@ const mapStateToProps = ({users}) => {
       leaderboardUsers: []
     }
   }
+};
+
+Leaderboard.propTypes = {
+  leaderboardUsers: PropTypes.array.isRequired
 };
 
 export default connect(mapStateToProps)(Leaderboard);

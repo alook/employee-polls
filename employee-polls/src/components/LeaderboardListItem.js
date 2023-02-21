@@ -5,6 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
+import PropTypes from "prop-types";
 
 const LeaderboardListItem = (props) => {
   const {leaderboardUser} = props;
@@ -23,5 +24,9 @@ const LeaderboardListItem = (props) => {
       </Fragment>
   )
 }
+
+LeaderboardListItem.propTypes = {
+  leaderboardUser: PropTypes.object.isRequired
+};
 
 export default LeaderboardListItem;

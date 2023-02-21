@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import Button from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
+import PropTypes from "prop-types";
 
 const PollOptionBox = (props) => {
   const {dispatch, question, authedUser, option, answered, ownAnswer, optionPercent, loading} = props;
@@ -68,4 +69,10 @@ const mapStateToProps = ({authedUser, questions, users}, {qid, option}) => {
     }
   }
 };
+
+PollOptionBox.propTypes = {
+  qid: PropTypes.string.isRequired,
+  option: PropTypes.string.isRequired
+};
+
 export default connect(mapStateToProps)(PollOptionBox);

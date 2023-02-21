@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import PollListItem from "./PollListItem";
+import PropTypes from "prop-types";
 
 const Polls = (props) => {
 
@@ -79,4 +80,8 @@ const mapStateToProps = ({authedUser, questions, users}) => {
   }
 };
 
+Polls.propTypes = {
+  newQuestionIds: PropTypes.array.isRequired,
+  answeredQuestionIds: PropTypes.array.isRequired
+};
 export default connect(mapStateToProps)(Polls);

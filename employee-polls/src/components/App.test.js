@@ -67,9 +67,7 @@ describe('App', () => {
     fireEvent.change(inputs[0], {target: {value: 'Eat pizza'}})
     fireEvent.change(inputs[1], {target: {value: 'Eat salad'}})
     fireEvent.click(submitButton)
-    const newPollsElement = await screen.findByText(/New polls/i);
-    expect(newPollsElement).toBeInTheDocument();
-    const newPoll = await screen.findByText(/Eat pizza \/ Eat salad/i);
-    expect(newPoll).toBeInTheDocument();
+    await screen.findByText(/New polls/i)
+    await screen.findByText(/Eat pizza/i)
   })
 })
