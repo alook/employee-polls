@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeaderboardListItem will match snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <li
+        class="MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiListItem-alignItemsFlexStart css-hhvo2v-MuiListItem-root"
+      >
+        <div
+          class="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart css-1m6607n-MuiListItemAvatar-root"
+        >
+          <div
+            class="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
+          >
+            <img
+              alt="userId"
+              class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+              src="/face1.png"
+            />
+          </div>
+        </div>
+        <div
+          class="MuiListItemText-root MuiListItemText-multiline css-konndc-MuiListItemText-root"
+        >
+          <span
+            class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+          >
+            username (userId)
+          </span>
+          <p
+            class="MuiTypography-root MuiTypography-body2 MuiListItemText-secondary css-83ijpv-MuiTypography-root"
+          >
+            Asked: 2, Answered: 3, Total: 5
+          </p>
+        </div>
+      </li>
+      <li
+        class="MuiDivider-root MuiDivider-inset css-uls1yk-MuiDivider-root"
+        role="separator"
+      />
+    </div>
+  </body>,
+  "container": <div>
+    <li
+      class="MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiListItem-alignItemsFlexStart css-hhvo2v-MuiListItem-root"
+    >
+      <div
+        class="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart css-1m6607n-MuiListItemAvatar-root"
+      >
+        <div
+          class="MuiAvatar-root MuiAvatar-circular css-1wlk0hk-MuiAvatar-root"
+        >
+          <img
+            alt="userId"
+            class="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+            src="/face1.png"
+          />
+        </div>
+      </div>
+      <div
+        class="MuiListItemText-root MuiListItemText-multiline css-konndc-MuiListItemText-root"
+      >
+        <span
+          class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+        >
+          username (userId)
+        </span>
+        <p
+          class="MuiTypography-root MuiTypography-body2 MuiListItemText-secondary css-83ijpv-MuiTypography-root"
+        >
+          Asked: 2, Answered: 3, Total: 5
+        </p>
+      </div>
+    </li>
+    <li
+      class="MuiDivider-root MuiDivider-inset css-uls1yk-MuiDivider-root"
+      role="separator"
+    />
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
